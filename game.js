@@ -207,14 +207,16 @@ function update(){
         const o =
         obs.el.getBoundingClientRect();
 
-        if(
-            p.left < o.right &&
-            p.right > o.left &&
-            p.top < o.bottom &&
-            p.bottom > o.top
-        ){
-            endGame();
-        }
+    const padding = 15;
+
+if(
+    p.left + padding < o.right &&
+    p.right - padding > o.left &&
+    p.top + padding < o.bottom &&
+    p.bottom - padding > o.top
+){
+    endGame();
+}
 
         if(obs.x < -50){
 
